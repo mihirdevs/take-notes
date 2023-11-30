@@ -1,1 +1,11 @@
-<p>note works!</p>
+
+<div *ngFor="let note in notes">
+
+    <div>
+        <h3>{{note.header}}</h3>
+        <p>{{note.message}}</p>
+
+        <button (click)="editNote(note.id)">Edit</button>
+        <button (click)="deleteNote(note.id)">Delete</button>
+    </div>
+</div>
