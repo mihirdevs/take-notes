@@ -11,7 +11,4 @@ export class AppComponent {
 
   selectedNote: Note = { id: 0, header: '', message: '' };
 
-  onEdit(note: Note): void {
-    this.selectedNote = { ...note }; // Create a copy of the selected note for editing
-  }
 }

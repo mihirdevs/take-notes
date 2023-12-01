@@ -1,10 +1,19 @@
-<form #noteForm="ngForm" (ngSubmit)="submitForm()">
-    <label for="header">Header:</label>
-    <input type="text" id="header" name="header" [(ngModel)]="note.header" required>
-  
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" [(ngModel)]="note.message" required></textarea>
-  
-    <button type="submit">Save</button>
+<form #noteForm="ngForm" (ngSubmit)="submitForm(noteForm)">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <label for="header">Header:</label>
+        <input type="text" id="header" name="header" [(ngModel)]="note.header" required placeholder="Add header">
+      </div>
+      <div class="col">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" [(ngModel)]="note.message" required placeholder="Add message"></textarea>
+      </div>
+      <button type="submit">Save</button>
+      <button type="button" (click)="cancelForm(noteForm)">Cancle</button>
+    </div>
+    
+
+  </div>
   </form>
   

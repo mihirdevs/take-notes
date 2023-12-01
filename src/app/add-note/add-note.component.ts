@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Note } from '../interface/note';
 import { NgForm } from '@angular/forms';
 import { NoteService } from '../note-service.service';
@@ -9,21 +9,30 @@ import { NoteService } from '../note-service.service';
   styleUrls: ['./add-note.component.css']
 })
 export class AddNoteComponent {
+
+  @Output() saved = new EventEmitter<Note>();
+  @Output() canceled = new EventEmitter<void>();
   @Input() note: Note = { id: 0, header: '', message: '' };
 
   constructor(private noteService: NoteService) {}
   
-  submitForm(): void {
-    if (this.note.id === 0) {
-      this.noteService.addNote({ ...this.note, id: this.generateId() });
-    } else {
-      this.noteService.editNote(this.note.id, this.note);
+  submitForm(noteForm:NgForm): void {
+    if(!noteForm.valid){
+        alert("Hey you forgot to enter notes")
     }
-
-    this.note = { id: 0, header: '', message: '' };
+    else{
+      if (this.note.id === 0) {
+        this.noteService.addNote({ ...this.note });
+      } else {
+        this.noteService.editNote(this.note.id, this.note);
+      }
+      this.saved.emit({ ...this.note });
+      this.note = { id: 0, header: '', message: '' };
+    }
   }
 
-  private generateId(): number {
-    return Math.floor(Math.random() * 1000);
+  cancelForm(noteForm:NgForm):void{
+    this.canceled.emit();
+    noteForm.resetForm();
   }
 }

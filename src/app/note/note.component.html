@@ -1,11 +1,30 @@
+<div class="container">
+    <div class="search">
+        <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input type="text" placeholder="Search notes" [(ngModel)]="searchTerm" class="searchbar">
+    </div>
+    
 
-<div *ngFor="let note in notes">
-
-    <div>
-        <h3>{{note.header}}</h3>
-        <p>{{note.message}}</p>
-
-        <button (click)="editNote(note.id)">Edit</button>
-        <button (click)="deleteNote(note.id)">Delete</button>
+    <div class="note-list">
+        <div *ngFor="let note of filteredNotes" class="note">
+            <div *ngIf="selectedNote && selectedNote.id === note.id; else noteList">
+                <app-add-note [note]="selectedNote"  (saved)="saveEdit($event)" (canceled)="cancelEdit()"></app-add-note>
+            </div>
+            <div>
+                <ng-template #noteList class="note-content">
+                    <h3 class="note-header">{{note.header}}</h3>
+                    <p class="note-message">{{note.message}}</p>
+        
+                    <div class="btn">
+                        <button (click)="editNote(note)" class="icon"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button (click)="deleteNote(note.id)" class="icon"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+    
+                </ng-template>
+            </div>
+        </div>
     </div>
 </div>
+
