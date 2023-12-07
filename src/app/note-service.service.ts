@@ -6,7 +6,7 @@ import { Note } from './interface/note';
 })
 export class NoteService {
 
-  private myNotes : Note[] = [{id:1,header:"First Header",message:"First Note"},{id:2,header:"First Header",message:"First Note"},{id:3,header:"First Header",message:"First Note"}]; 
+  private myNotes : Note[] = [{id:1,header:"Sample Note Header",message:"Sample Note"}]; 
   lastUsedId = 1;
   constructor() { }
 

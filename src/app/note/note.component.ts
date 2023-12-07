@@ -37,8 +37,12 @@ export class NoteComponent implements OnInit{
   }
 
   deleteNote(id: number): void {
-    this.noteService.deleteNote(id);
-    this.notes = this.noteService.getNotes();
+    const isConfirmed = window.confirm('Are you sure you want to delete this note?');
+
+    if(isConfirmed){
+      this.noteService.deleteNote(id);
+      this.notes = this.noteService.getNotes();
+    }
   }
 
   get filteredNotes(): Note[] {

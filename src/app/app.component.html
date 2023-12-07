@@ -1,6 +1,8 @@
 <div class="header">
-  <p>Take Notes</p>
+  <p>Take Notes <i class="fa-solid fa-pencil"></i></p>
 </div>
 
-<app-note></app-note>
-<app-add-note [note]="selectedNote"></app-add-note>
+<div class="container">
+  <app-add-note [note]="selectedNote"></app-add-note>
+  <app-note></app-note>
+</div>

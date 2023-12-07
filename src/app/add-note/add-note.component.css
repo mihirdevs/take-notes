@@ -1,0 +1,97 @@
+.editing-note{
+    background-color: rgb(52 43 69);
+    border-radius: 7px;
+    padding: 7px;
+    box-sizing: border-box;
+    position: relative;
+    width:auto;
+    height: auto;
+}
+
+.regular-note{
+    background-color: rgb(52 43 69);
+    border-radius: 7px;
+    padding: 7px;
+    box-sizing: border-box;
+    position: relative;
+    width:30%;
+    height: auto;
+}
+
+.header {
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    transition: border-color 0.3s ease; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #007bff;
+  }
+
+  input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+input, textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn{
+    text-align: right;
+}
+
+.icon {
+    margin-right: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    line-height: normal;
+    cursor: pointer;
+    color: rgb(224, 71, 15);
+    font-size: large;
+}
+
+.icon:not(:last-child) {
+    margin-right: 10px;
+}
+
+.icon:last-child{
+    color: rgb(167, 15, 15);
+}
+
+.instruction{
+    text-align: right;
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+    font-family: "Georgia", serif;
+}
+
+@media (max-width: 992px) {
+    .regular-note {
+        width: 49%;
+    }
+}
+
+@media (max-width: 576px) {
+    .regular-note {
+        width: 100%;
+    }
+}

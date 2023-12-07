@@ -16,12 +16,11 @@
                 <ng-template #noteList class="note-content">
                     <h3 class="note-header">{{note.header}}</h3>
                     <p class="note-message">{{note.message}}</p>
-        
+
                     <div class="btn">
                         <button (click)="editNote(note)" class="icon"><i class="fa-solid fa-pen-to-square"></i></button>
                         <button (click)="deleteNote(note.id)" class="icon"><i class="fa-solid fa-trash"></i></button>
                     </div>
-    
                 </ng-template>
             </div>
         </div>

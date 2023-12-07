@@ -1,6 +1,7 @@
 .search{
     position: relative;
     text-align: right;
+    margin-top: 10px;
 }
 
 .search-icon {
@@ -14,7 +15,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 8px;
-    width: 200px;
+    width: 100%;
     box-sizing: border-box;
     padding-right: 30px;
 }
@@ -24,12 +25,18 @@
 }
 
 .note{
-    background-color: antiquewhite;
+    background-color: #f9c37a;
     border-radius: 7px;
     width: 30%;
     margin-bottom: 20px;
     padding: 7px;
     box-sizing: border-box;
+    position: relative;
+    height: 180px;
+}
+
+.note:hover{
+    opacity: 0.8;
 }
 
 .note-content{
@@ -44,17 +51,19 @@
 }
 
 .note-header{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(9, 9, 90);
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
 
 .note-message{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Georgia", serif;
     color:rgb(27, 25, 25)
 }
 
 .btn{
-    text-align: right;
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
 }
 
 .icon {

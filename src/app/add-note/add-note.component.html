@@ -1,19 +1,14 @@
-<form #noteForm="ngForm" (ngSubmit)="submitForm(noteForm)">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <label for="header">Header:</label>
-        <input type="text" id="header" name="header" [(ngModel)]="note.header" required placeholder="Add header">
-      </div>
-      <div class="col">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" [(ngModel)]="note.message" required placeholder="Add message"></textarea>
-      </div>
-      <button type="submit">Save</button>
-      <button type="button" (click)="cancelForm(noteForm)">Cancle</button>
+<div [ngClass]="{'editing-note': isNoteEditing, 'regular-note': !isNoteEditing}">
+  <p class="instruction" *ngIf="!isNoteEditing">*hit enter to save</p>
+  <form #noteForm="ngForm" (ngSubmit)="submitForm(noteForm)">
+    <h3>
+      <input type="text" id="header" #headerInput name="header" class="header" [(ngModel)]="note.header" required placeholder="Add header">
+    </h3>
+      <p><textarea id="message" name="message" (keyup.enter)="handleKeyUp($event, noteForm)"  class="message" [(ngModel)]="note.message" required placeholder="Add message"></textarea></p>
+    <div class="btn">
+      <button type="submit" class="icon"><i class="fa-solid fa-floppy-disk"></i></button>
+      <button type="button" class="icon" (click)="cancelForm(noteForm)"><i class="fa-solid fa-ban"></i></button>
     </div>
-    
-
-  </div>
-  </form>
+</form>
+</div>
   
