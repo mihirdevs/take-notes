@@ -19,3 +19,6 @@ TakeNotes allows users to easily create, manage, and organize their notes in a u
   <img src="src/assets/note-list.jpg" width="400" alt="First Image">
   <img src="src/assets/note-search.jpg" width="400" alt="Second Image">
 </p>
+
+## Demo
+Visit site here : [TakeNotes](https://snap-notes.netlify.app)<!-- _blank -->
