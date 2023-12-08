@@ -24,6 +24,12 @@
     border-color: #555;
 }
 
+.date{
+    text-align: right;
+    font-size: 13px;
+    font-family: monospace;
+}
+
 .note{
     background-color: #f9c37a;
     border-radius: 7px;

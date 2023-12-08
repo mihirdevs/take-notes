@@ -9,6 +9,6 @@ import { Note } from './interface/note';
 export class AppComponent {
   title = 'take-notes';
 
-  selectedNote: Note = { id: 0, header: '', message: '' };
+  selectedNote: Note = { id: 0, header: '', message: '',date:'' };
 
 }

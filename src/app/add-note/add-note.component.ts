@@ -12,7 +12,7 @@ export class AddNoteComponent implements OnInit{
 
   @Output() saved = new EventEmitter<Note>();
   @Output() canceled = new EventEmitter<void>();
-  @Input() note: Note = { id: 0, header: '', message: '' };
+  @Input() note: Note = { id: 0, header: '', message: '', date:'' };
   @ViewChild('headerInput') headerInput!: ElementRef;
   
   isNoteEditing : boolean  = false
@@ -47,7 +47,7 @@ export class AddNoteComponent implements OnInit{
         this.noteService.editNote(this.note.id, this.note);
       }
       this.saved.emit({ ...this.note });
-      this.note = { id: 0, header: '', message: '' };
+      this.note = { id: 0, header: '', message: '',date:'' };
     }
     this.focusOnHeaderInput()
   }
