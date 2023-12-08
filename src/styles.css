@@ -4,3 +4,18 @@ body{
     margin-left: 150px;
     margin-right: 150px;
 }
+
+@media (max-width: 992px) {
+    body {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        margin-left: 50px;
+        margin-right: 50px;
+
+    }
+}
